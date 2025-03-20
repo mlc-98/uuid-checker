@@ -1,5 +1,5 @@
 import { describe, expect, test } from "bun:test";
-import { isUUID, nilRegex, v1, v2, v3, v4, v5, v7 } from "./index";
+import { isUUID, nilRegex, v1, v2, v3, v4, v5, v7 } from "./index.js";
 
 describe("Tests for UUID V1.", () => {
   test("Valid V1 UUID", () => {
