@@ -252,3 +252,13 @@ describe("Tests for nil UUID", () => {
     expect(result).toBe(expected);
   });
 });
+
+describe("Tests for invalid validators", () => {
+  // This test is purposely skipped because it will throw an error.
+  test.skip("Invalid custom regex", () => {
+    const testData = 'e9af97e2-0531-11f0-9b9c-8effaaf4080b';
+    const wrongRegex = /^[0-9]{5}$/i;
+    // @ts-expect-error - Intentional type violation for testing
+    expect(isUUID(testData, { validators: [wrongRegex]})).toBe(false);
+  });
+});

@@ -2,7 +2,7 @@
   "name": "uuid-checker",
   "author": "Mateo León Camacho",
   "description": "Check whether a string is a UUID.",
-  "version": "0.0.2",
+  "version": "0.1.3",
   "keywords": ["uuid"],
   "type": "module",
   "main": "dist/index.js",
