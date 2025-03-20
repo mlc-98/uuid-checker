@@ -1,0 +1,22 @@
+{
+  "name": "uuid-checker",
+  "author": "Mateo León Camacho",
+  "description": "Check whether a string is a UUID.",
+  "version": "0.0.1",
+  "keywords": ["uuid"],
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc --build",
+    "test": "bun test"
+  },
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "license": "MIT"
+}
