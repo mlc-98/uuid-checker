@@ -2,7 +2,11 @@
   "name": "uuid-checker",
   "author": "Mateo León Camacho",
   "description": "Check whether a string is a UUID.",
-  "version": "1.0.0",
+  "version": "1.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mlc-98/uuid-checker"
+  },
   "keywords": [
     "uuid",
     "checker",
