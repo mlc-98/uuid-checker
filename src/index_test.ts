@@ -1,5 +1,5 @@
 import { describe, expect, test } from "bun:test";
-import { isUUID, nilRegex, v1, v2, v3, v4, v5, v7 } from "./index.js";
+import { isUUID, nil, v1, v2, v3, v4, v5, v7 } from "./index.js";
 
 describe("Tests for UUID V1.", () => {
   test("Valid V1 UUID", () => {
@@ -227,14 +227,14 @@ describe("Tests for nil UUID", () => {
   test("Valid nil UUID", () => {
     const expected = true;
     const testData = "00000000-0000-0000-0000-000000000000";
-    const result = isUUID(testData, { validators: [nilRegex] });
+    const result = isUUID(testData, { validators: [nil] });
     expect(result).toBe(expected);
   });
 
   test("Invalid nil UUID (invalid character)", () => {
     const expected = false;
     const testData = "00000000-1000-0000-0000-000000000000";
-    const result = isUUID(testData, { validators: [nilRegex] });
+    const result = isUUID(testData, { validators: [nil] });
     expect(result).toBe(expected);
   });
 
@@ -248,7 +248,7 @@ describe("Tests for nil UUID", () => {
   test("Invalid nil UUID (invalid length)", () => {
     const expected = false;
     const testData = "00000000-00000-0000-0000-000000000000";
-    const result = isUUID(testData, { validators: [nilRegex] });
+    const result = isUUID(testData, { validators: [nil] });
     expect(result).toBe(expected);
   });
 });
@@ -258,7 +258,7 @@ describe("Tests for invalid validators", () => {
   test.skip("Invalid custom regex", () => {
     const testData = 'e9af97e2-0531-11f0-9b9c-8effaaf4080b';
     const wrongRegex = /^[0-9]{5}$/i;
-    // @ts-expect-error - Intentional type violation for testing
-    expect(isUUID(testData, { validators: [wrongRegex]})).toBe(false);
+    // @ts-expect-error - Intentional type mismatch for testing
+    expect(isUUID(testData, { validators: [wrongRegex] })).toBe(false);
   });
 });
